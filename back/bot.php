@@ -1,8 +1,17 @@
+<?php
+//只有一行時，可以省略大括號
+// if(!empty($_POST)){
+//   $Bottom->save(['bottom'=>$_POST['bottom'],'id'=>1]);
+// }
+if(!empty($_POST))$Bottom->save(['bottom'=>$_POST['bottom'],'id'=>1]);
+
+?>
+
 <h2 class="ct">編輯頁尾版權區</h2>
-<form action="" method="post">
+<form action="?do=bot" method="post">
     <table class="all">
         <tr>
-            <td class="tt">
+            <td class="tt">頁尾宣告內容
                 <td class="pp">
                     <input type="text" name="bottom" value="<?=$Bottom->find(1)['bottom'];?>">
                 </td>
