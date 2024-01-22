@@ -1,7 +1,9 @@
 <?php include_once "./api/db.php" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0039) -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>┌精品電子商務網站」</title>
 <link href="./css/css.css" rel="stylesheet" type="text/css">
@@ -30,7 +32,7 @@
                         <span>
             	<div>進站總人數</div>
                 <div style="color:#f00; font-size:28px;">
-                	00005                </div>
+                	00005 </div>
             </span>
                     </div>
         <div id="right">
@@ -46,7 +48,8 @@
 
         </div>
         <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
-        	頁尾版權 :        </div>
+            <?=$Bottom->find(1)['bottom'];?>   
+        </div>
     </div>
 <script src="./js/jquery-3.4.1.min.js"></script>
 </body></html>
