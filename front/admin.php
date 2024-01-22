@@ -1,4 +1,5 @@
 <h2>管理員登入</h2>
+<!-- table.all>tr*3>td.tt.ct+td.pp>input:text -->
 <table class="all">
     <tr>
         <td class="tt ct">帳號</td>
@@ -9,7 +10,7 @@
     <tr>
         <td class="tt ct">密碼</td>
         <td class="pp">
-            <input type="text" name="pw" id="pw">
+            <input type="password" name="pw" id="pw">
         </td>
     </tr>
     <tr>
@@ -21,11 +22,34 @@
              $_SESSION['ans']=$a+$b;
              echo $a. "+" .$b. "=" 
              ?>
-            <input type="text" name="chk" id="chk">
+            <input type="text" name="ans" id="ans">
         </td>
     </tr>
 </table>
 
 <div class="ct">
-    <button>確認</button>
+    <button onclick="login('admin')">確認</button>
 </div>
+
+<script>
+function login(table){
+    $.get('./api/chk_ans.php',{ans:$("#ans").val()},(chk)=>{
+        if(parseInt(chk)==0){
+        //parseInt & number 差別 parseInt會轉成整數 Number可能有非整數問題
+            alert("對不起，您輸入的驗證碼有誤，請您重新登入")
+        }else{
+            $.post("./api/chk_pw.php",
+                    {table,
+                     acc:$("#acc").val(),
+                     pw:$("#pw").val()},
+                    (res)=>{
+                if(parseInt(res)==0){
+                    alert("帳號或密碼錯誤，請重新輸入")
+                }else{
+                    location.href='back.php?do=admin';
+                }
+            })
+        }
+    })
+}
+</script>
