@@ -14,6 +14,7 @@ $row=$Mem->find($_GET['id']);
     <tr>
         <td class="tt ct">密碼</td>
         <td class="pp"><?=str_repeat("*",strlen($row['pw']));?></td>
+                         <!-- 將密碼變成**** -->
     </tr>
     <tr>
         <td class="tt ct">姓名</td>
