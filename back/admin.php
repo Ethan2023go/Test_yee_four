@@ -33,7 +33,3 @@
     <button onclick="location.href='index.php'">返回</button>
 
 </div>
-
-<script>
-
-</script>
