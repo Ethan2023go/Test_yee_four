@@ -19,7 +19,7 @@ foreach($bigs as $big){
         <td><?=$big['name'];?></td>
         <td class="ct">
             <button onclick="edit(this,<?=$big['id'];?>)">修改</button>
-            <button onclick="del('type',<?=$big['id'];?>">刪除</button>
+            <button onclick="del('type',<?=$big['id'];?>)">刪除</button>
         </td>
     </tr>
     <?php
@@ -40,6 +40,15 @@ foreach($bigs as $big){
 </table>
 <script>
     getTypes(0)
+    function edit(dom,id){
+        let name=prompt("請輸入你要修改的分類名稱:",`${$(dom).parent().prev().text()}`)
+        if(name!=null){
+            $.post("./api/save_type.php",{name,id},()=>{
+                $(dom).parent().prev().text(name)
+                // location.reload();
+            })
+        }
+    }
 
     function getTypes(big_id){
         $.get("./api/get_types.php",{big_id},(types)=>{
