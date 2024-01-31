@@ -37,7 +37,7 @@
         </tr>
         <tr>
             <th class="tt ct">商品圖片</th>
-            <td class="pp"><input type="text" name="img" value=""></td>
+            <td class="pp"><input type="file" name="img" value=""></td>
         </tr>
         <tr>
             <th class="tt ct">商品介紹</th>
@@ -57,7 +57,7 @@
         getTypes('mid',$("#big").val())
     })
 
-    function getTypes(type,big_id) {  
+    function getTypes(type,big_id){  
         $.get("./api/get_types.php",{big_id},(types)=>{
             switch(type){
                 case 'big':
