@@ -42,12 +42,11 @@ body
 #right
 {
 	display:inline-block;
-	width:65%;
+	width:71%;
 	padding:2%;
-	min-height:550px;
-	border:#000 1px solid;
 	height:550px;
 	overflow: auto;
+	border:#000 1px solid;
 }
 #bottom
 {
@@ -105,10 +104,8 @@ input[type=text],input[type=password]
 	display:none;
 }
 #left .s a{
-	background-color: lightblue;
+	background-color:lightgreen;
 }
-/* CSS中 路徑越完整 層級越高 */
-
 div.ww:hover > div.s
 {
 	display:block;
@@ -117,3 +114,4 @@ div.ww:hover > div.s
 {
 	font-size:12px;
 }
+
