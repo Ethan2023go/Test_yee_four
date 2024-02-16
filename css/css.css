@@ -105,6 +105,7 @@ input[type=text],input[type=password]
 #left .s a{
 	background-color: lightblue;
 }
+/* CSS中路徑越完整 */
 
 div.ww:hover > div.s
 {
