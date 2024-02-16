@@ -20,12 +20,42 @@ if($type==0){
 ?>
 <h2><?=$nav;?></h2>
 
+<style>
+    .item{
+        width: 80%;
+        height: 160px;
+        background-color: #f4c591;
+        margin: 5px auto;
+        display: flex;
+    }
+    .item .img{
+        width: 33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border:1px solid #999;
+    }
+    .item .info{
+        width:67%;
+        display: flex;
+        flex-direction: column;
+    }
+    .info div{
+        border:1px solid #999;
+        border-left:0px;
+        border-top:0px;
+        flex-grow: 1;
+    }
+    .info div:nth-child(1){
+       border-top:1px solid #999;
+    }
+</style>
 <?php
 foreach($goods as $good){
 ?>
 <div class="item">
     <div class="img">
-        <img src="./img/<?=$good['img'];?>" style="width:200px;height:150px">
+        <img src="./img/<?=$good['img'];?>" style="width:80%;height:130px">
     </div>
     <div class="info">
         <div class="ct tt"><?=$good['name'];?></div>
